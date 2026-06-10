@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --primary-heading: #3F256D; /* H1 */
+  --body-text: #5E4F78; /* body text */
+  --nav-text: #2E214B; /* nav items */
+  --nav-active: #C74F9B; /* active / accent pink */
+  --btn-bg: #6036A0; /* primary button */
+  --btn-text: #FFFFFF;
+  --feature-heading: #33245A;
+  --feature-desc: #6B5D86;
+  --body-bg: #fcd2d9; /* global body background */
+  --card-bg: #FFFFFF; /* card background */
+}
+
+@layer base {
+  body {
+    font-family: inherit;
+    background-color: var(--body-bg);
+    font-body: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--body-text);
+  }
+  .dark body {
+    @apply bg-plum-950 text-plum-50;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    color: var(--primary-heading);
+  }
+  ::selection {
+    @apply bg-plum-200;
+    color: var(--primary-heading);
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+  ::-webkit-scrollbar-track { @apply bg-gray-100; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold
+           transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn shadow-soft hover:-translate-y-0.5;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+  }
+  .btn-primary:hover {
+    filter: brightness(0.95);
+  }
+  .btn-pink {
+    @apply btn bg-blush-500 text-white hover:bg-blush-600 shadow-soft;
+  }
+  .btn-ghost {
+    @apply btn border text-plum-800 hover:bg-plum-50 dark:text-plum-50;
+    border-color: rgba(46,33,75,0.08);
+  }
+  .card {
+    background-color: var(--card-bg);
+    @apply dark:bg-plum-900 rounded-2xl shadow-card overflow-hidden;
+  }
+  .input {
+    @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900
+           placeholder:text-gray-400 focus:border-gray-500 focus:ring-2 focus:ring-gray-200 outline-none
+           dark:bg-gray-900 dark:border-gray-700 dark:text-white;
+  }
+  .container-x {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-semibold;
+    color: var(--primary-heading);
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  /* Custom semantic utility classes using provided theme colors */
+  .text-nav-text { color: var(--nav-text); }
+  .text-nav-active { color: var(--nav-active); }
+  .text-feature-heading { color: #33245A !important; }
+  .text-feature-desc { color: #6B5D86 !important; }
+  .text-primary-heading { color: var(--primary-heading); }
+
+  /* Override commonly used plum utilities to match the provided theme */
+  .text-plum-950 { color: var(--primary-heading) !important; }
+  .text-plum-900 { color: var(--feature-heading) !important; }
+  .text-plum-700 { color: var(--btn-bg) !important; }
+  .text-plum-600 { color: var(--body-text) !important; }
+  .text-plum-500 { color: var(--body-text) !important; }
+  .bg-plum-50 { background-color: rgba(244,229,236,0.4); }
+  .bg-plum-100 { background-color: rgba(244,229,236,0.6); }
+}

@@ -1,0 +1,25 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const stored = JSON.parse(localStorage.getItem('bh_wishlist') || '[]');
+const persist = (items) => localStorage.setItem('bh_wishlist', JSON.stringify(items));
+
+const wishlistSlice = createSlice({
+  name: 'wishlist',
+  initialState: { items: stored },
+  reducers: {
+    toggleWishlist: (state, { payload }) => {
+      const idx = state.items.findIndex((i) => i._id === payload._id);
+      if (idx >= 0) state.items.splice(idx, 1);
+      else state.items.push(payload);
+      persist(state.items);
+    },
+    removeFromWishlist: (state, { payload }) => {
+      state.items = state.items.filter((i) => i._id !== payload);
+      persist(state.items);
+    },
+  },
+});
+
+export const { toggleWishlist, removeFromWishlist } = wishlistSlice.actions;
+export default wishlistSlice.reducer;
+export const selectWishlist = (s) => s.wishlist.items;
