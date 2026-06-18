@@ -10,7 +10,6 @@ const links = [
   { to: '/', label: 'Home' },
   { to: '/books', label: 'Shop' },
   { to: '/about', label: 'About Us' },
-  { to: '/blog', label: 'Blog' },
 ];
 
 export default function Navbar() {
