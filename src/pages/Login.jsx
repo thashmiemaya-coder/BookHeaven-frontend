@@ -85,9 +85,7 @@ export default function Login() {
             </Link>
           </p>
 
-          <div className="mt-6 rounded-xl bg-plum-50 dark:bg-plum-900/50 p-3 text-xs text-plum-500 dark:text-plum-400 text-center">
-           
-          </div>
+          
         </div>
       </section>
     </>
