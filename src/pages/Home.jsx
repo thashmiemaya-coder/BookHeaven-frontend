@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookMarked, Star, Truck } from 'lucide-react';
 import Seo from '../components/ui/Seo';
@@ -7,7 +7,7 @@ import ChildrenImg from '../assets/images/children.png';
 import AboutUsImg from '../assets/images/AboutUs.jpg';
 import BookCard from '../components/ui/BookCard';
 import Loader from '../components/ui/Loader';
-import { useGetFeaturedQuery, useGetBestSellersQuery, useGetBooksQuery } from '../features/api/apiSlice';
+import { useGetFeaturedQuery, useGetBestSellersQuery, useGetBooksQuery, useSubmitContactMutation } from '../features/api/apiSlice';
 
 export default function Home() {
 
@@ -89,6 +89,45 @@ export default function Home() {
 }
 
 function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [submitContact, { isLoading, isError, isSuccess }] = useSubmitContactMutation();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      await submitContact({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      }).unwrap();
+      
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Failed to send message:', error);
+    }
+  };
+
   return (
     <section className="py-[120px]">
       <div className="container-x mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -138,26 +177,68 @@ function ContactSection() {
           </div>
 
           <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="mb-2 block text-sm font-semibold text-[#3F256D]">Full Name</label>
-                <input type="text" placeholder="Your name" className="h-14 w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20" />
+                <input 
+                  type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name" 
+                  className="h-14 w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20" 
+                  required
+                />
               </div>
+              
               <div>
                 <label className="mb-2 block text-sm font-semibold text-[#3F256D]">Email Address</label>
-                <input type="email" placeholder="you@example.com" className="h-14 w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20" />
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com" 
+                  className="h-14 w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20" 
+                  required
+                />
               </div>
+              
               <div>
                 <label className="mb-2 block text-sm font-semibold text-[#3F256D]">Subject</label>
-                <input type="text" placeholder="Subject" className="h-14 w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20" />
+                <input 
+                  type="text" 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Subject" 
+                  className="h-14 w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20" 
+                  required
+                />
               </div>
+              
               <div>
                 <label className="mb-2 block text-sm font-semibold text-[#3F256D]">Message</label>
-                <textarea placeholder="Write your message here" className="h-[200px] w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 py-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20 resize-none" />
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Write your message here" 
+                  className="h-[200px] w-full rounded-[16px] border border-[#E8D7EA] bg-[#FBF7FF] px-4 py-4 text-[#5E4F78] placeholder:text-[#9f8fa8] focus:border-[#C74F9B] focus:outline-none focus:ring-2 focus:ring-[#C74F9B]/20 resize-none" 
+                  required
+                />
               </div>
-              <button type="submit" className="mt-2 inline-flex h-14 w-[220px] items-center justify-center rounded-[16px] btn-pink">
-                Send Message
+              
+              <button 
+                type="submit" 
+                className="mt-2 inline-flex h-14 w-[220px] items-center justify-center rounded-[16px] btn-pink"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Sending...' : 'Send Message'}
               </button>
+              
+              {isError && <p className="text-red-500 mt-2">Failed to send message. Please try again.</p>}
+              {isSuccess && <p className="text-green-500 mt-2">Message sent successfully!</p>}
             </form>
           </div>
         </div>
