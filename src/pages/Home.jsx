@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <Seo title="Home" description="Experience our new exclusive books at BookHaven." />
+      <Seo title="Home" description="Experience our new exclusive books at BookHeaven." />
 
             <div className="min-h-screen">
         {/* Hero */}
