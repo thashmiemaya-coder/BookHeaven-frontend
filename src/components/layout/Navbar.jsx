@@ -33,7 +33,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <nav className="container-x flex items-center gap-4 h-16 bg-transparent max-w-full">
         <Link to="/" className="font-display text-2xl font-bold text-primary-heading shrink-0">
-          Book<span className="text-primary-heading">Haven</span>
+          Book<span className="text-primary-heading">Heaven</span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-1 ml-4">

@@ -60,17 +60,17 @@ export default function Home() {
             <span className="block w-16 h-[4px] rounded bg-plum-100"></span>
           </div>
           <h2 className="mt-4 font-display text-2xl md:text-3xl font-semibold leading-tight text-primary-heading">
-            Welcome to BookHaven — Your Literary Escape
+            Welcome to BookHeaven — Your Literary Escape
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <img src={AboutUsImg} alt="About BookHaven" className="w-full h-auto rounded-2xl shadow-lg" />
+            <img src={AboutUsImg} alt="About BookHeaven" className="w-full h-auto rounded-2xl shadow-lg" />
           </div>
           <div>
             <p className="text-feature-desc leading-relaxed mb-6">
-              At BookHaven we curate a diverse collection of books from timeless classics to contemporary bestsellers. Our mission is to create a welcoming space for readers to discover, learn, and connect through stories. From exclusive editions to personalized recommendations, we make reading a delightful experience.
+              At BookHeaven we curate a diverse collection of books from timeless classics to contemporary bestsellers. Our mission is to create a welcoming space for readers to discover, learn, and connect through stories. From exclusive editions to personalized recommendations, we make reading a delightful experience.
             </p>
             <div className="flex gap-3">
               <Link to="/about" className="btn-pink">Read More</Link>
@@ -138,7 +138,7 @@ function ContactSection() {
             <span className="block h-1 w-24 rounded-full bg-plum-100" />
           </div>
           <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-primary-heading" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
-            BookHaven Contact Center
+            BookHeaven Contact Center
           </h2>
           <p className="mt-4 text-3xl font-semibold text-[#3F256D]" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>
             We'd Love to Hear From You
@@ -156,7 +156,7 @@ function ContactSection() {
             </div>
             <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
               <p className="text-[18px] font-semibold text-[#3F256D]">Email</p>
-              <p className="mt-4 text-[16px] text-[#5E4F78]">📧 <a href="mailto:support@bookhaven.com" className="hover:underline">support@bookhaven.com</a></p>
+              <p className="mt-4 text-[16px] text-[#5E4F78]">📧 <a href="mailto:support@bookheaven.com" className="hover:underline">support@bookheaven.com</a></p>
             </div>
             <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
               <p className="text-[18px] font-semibold text-[#3F256D]">Phone</p>
