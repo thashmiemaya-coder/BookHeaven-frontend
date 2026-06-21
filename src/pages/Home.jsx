@@ -43,13 +43,25 @@ export default function Home() {
       </section>
 
       {/* Feature strip */}
-      <section className="container-x mt-48 relative z-10">
-        <div className="card p-4 md:p-6 lg:p-8 shadow-[0_35px_80px_-40px_rgba(78,42,132,0.18)] border border-[#f3e9f8] grid sm:grid-cols-3 gap-4 md:gap-6">
-          <Feature icon={<BookMarked />} title="Carefully Curated" text="Handpicked books by our experts" />
-          <Feature icon={<Star />} title="Exclusive Editions" text="Find books you won't find anywhere else" />
-          <Feature icon={<Truck />} title="Fast Shipping" text="Quick and reliable delivery" />
-        </div>
-      </section>
+<section className="container-x -mt-24 relative z-20">
+  <div className="grid md:grid-cols-3 gap-8">
+    <Feature
+      icon={<BookMarked size={30} />}
+      title="Carefully Curated"
+      text="Handpicked books by our experts"
+    />
+    <Feature
+      icon={<Star size={30} />}
+      title="Exclusive Editions"
+      text="Find books you won't find anywhere else"
+    />
+    <Feature
+      icon={<Truck size={30} />}
+      title="Fast Shipping"
+      text="Quick and reliable delivery"
+    />
+  </div>
+</section>
 
       {/* About */}
       <section className="container-x py-20">
@@ -248,10 +260,51 @@ function ContactSection() {
 }
 
 const Feature = ({ icon, title, text }) => (
-  <div className="flex flex-col items-center text-center px-4 py-6 sm:px-6 sm:py-8">
-    <span className="grid h-14 w-14 place-items-center rounded-full bg-[#4E2A84] text-white shadow-soft mb-4">{icon}</span>
-    <h3 className="font-semibold text-lg" style={{ color: '#33245A' }}>{title}</h3>
-    <p className="text-sm mt-3 max-w-xs" style={{ color: '#6B5D86' }}>{text}</p>
+  <div
+    className="
+      group
+      bg-white
+      rounded-3xl
+      p-10
+      text-center
+      border border-[#F0E6F7]
+      shadow-lg
+      hover:shadow-2xl
+      hover:-translate-y-2
+      transition-all
+      duration-300
+    "
+  >
+    <div
+      className="
+        mx-auto
+        mb-6
+        flex
+        h-20
+        w-20
+        items-center
+        justify-center
+        rounded-full
+        bg-gradient-to-r
+        from-[#6036A0]
+        to-[#C74F9B]
+        text-white
+        shadow-lg
+        group-hover:scale-110
+        transition-transform
+        duration-300
+      "
+    >
+      {icon}
+    </div>
+
+    <h3 className="text-2xl font-bold text-[#3F256D] mb-3">
+      {title}
+    </h3>
+
+    <p className="text-[#6B5D86] leading-relaxed">
+      {text}
+    </p>
   </div>
 );
 
