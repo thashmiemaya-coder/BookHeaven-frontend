@@ -141,7 +141,9 @@ function ContactSection() {
   };
 
   return (
-    <section className="py-[120px]">
+   <section className="py-[120px] relative overflow-hidden">
+  <div className="absolute top-0 left-0 w-72 h-72 bg-pink-200 rounded-full blur-[120px] opacity-30"></div>
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200 rounded-full blur-[150px] opacity-30"></div>
       <div className="container-x mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4">
@@ -162,29 +164,67 @@ function ContactSection() {
 
         <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
+            <div className="rounded-[32px]p-10bg-gradient-to-brfrom-pink-50via-whiteto-purple-50borderborder-pink-100shadow-lghover:shadow-2xlhover:-translate-y-2transition-allduration-300">
               <p className="text-[18px] font-semibold text-[#3F256D]">Location</p>
-              <p className="mt-4 text-[16px] text-[#5E4F78]">📍 Negombo, Sri Lanka</p>
+             <div className="flex items-center gap-4 mt-4">
+  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+    📍
+  </div>
+  <p className="text-[16px] text-[#5E4F78]">
+    Negombo, Sri Lanka
+  </p>
+</div>
             </div>
-            <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
+            <div className="rounded-[32px]p-10bg-gradient-to-brfrom-pink-50via-whiteto-purple-50borderborder-pink-100shadow-lghover:shadow-2xlhover:-translate-y-2transition-allduration-300">
               <p className="text-[18px] font-semibold text-[#3F256D]">Email</p>
-              <p className="mt-4 text-[16px] text-[#5E4F78]">📧 <a href="mailto:support@bookheaven.com" className="hover:underline">support@bookheaven.com</a></p>
+              <div className="flex items-center gap-4 mt-4">
+  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+    📍
+  </div>
+  <p className="text-[16px] text-[#5E4F78]">
+    Bookheaven@gmail.com
+  </p>
+</div>
             </div>
-            <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
+            <div className="rounded-[32px]p-10bg-gradient-to-brfrom-pink-50via-whiteto-purple-50borderborder-pink-100shadow-lghover:shadow-2xlhover:-translate-y-2transition-allduration-300">
               <p className="text-[18px] font-semibold text-[#3F256D]">Phone</p>
-              <p className="mt-4 text-[16px] text-[#5E4F78]">📞 +94 77 123 4567</p>
+              <div className="flex items-center gap-4 mt-4">
+  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
+    📞
+  </div>
+  <p className="text-[16px] text-[#5E4F78]">
+    +94 77 123 4567
+  </p>
+</div>
             </div>
-            <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
+            <div className="rounded-[32px] p-10 bg-gradient-to-br from-pink-50 via-white to-purple-50 border border-pink-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <p className="text-[18px] font-semibold text-[#3F256D]">Business Hours</p>
               <p className="mt-4 text-[16px] text-[#5E4F78]">🕒 Monday – Saturday<br />9:00 AM – 6:00 PM</p>
             </div>
-            <div className="sm:col-span-2 rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
+            <div className=" rounded-[32px] p-10 bg-gradient-to-br from-pink-50 via-white to-purple-50 border border-pink-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <p className="text-[18px] font-semibold text-[#3F256D]">Social Media</p>
-              <div className="mt-4 space-y-2 text-[16px] text-[#5E4F78]">
-                <p>Facebook</p>
-                <p>Instagram</p>
-                <p>TikTok</p>
-              </div>
+              <div className="flex gap-4 mt-6">
+  <a
+    href="#"
+    className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    f
+  </a>
+
+  <a
+    href="#"
+    className="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white flex items-center justify-center text-xl font-bold shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    📷
+  </a>
+
+  <a
+    href="#"
+    className="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center text-xl font-bold shadow-lg hover:scale-110 transition-all duration-300"
+  >
+    ♪
+  </a>
+</div>
             </div>
           </div>
 
