@@ -58,7 +58,7 @@ export default function Books() {
   const totalPages = data?.pages || 1;
 
   return (
-    <div className="bg-[#fddce1]">
+    <div className="bg-[#ffffff]">
       <Seo title="Shop Books" description="Browse the full BookHaven collection." />
 
       <section
