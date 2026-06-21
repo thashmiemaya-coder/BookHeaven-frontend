@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="container-x py-14 grid gap-10 md:grid-cols-4">
         <div>
           <h3 className="font-display text-2xl font-bold text-white mb-3">
-            Book<span className="text-blush-400">Haven</span>
+            Book<span className="text-blush-400">Heaven</span>
           </h3>
           <p className="text-sm text-plum-300 leading-relaxed">
             Your destination for exclusive books and unforgettable stories.
