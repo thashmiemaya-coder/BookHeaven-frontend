@@ -36,9 +36,7 @@ export default function Home() {
               <Link to="/about" className="btn-ghost">Learn More</Link>
             </div>
           </div>
-          <div className="hidden lg:flex justify-end">
-            <img src={ChildrenImg} alt="Children reading" className="max-w-full h-auto xl:w-[90%]" />
-          </div>
+          
         </div>
       </section>
 
