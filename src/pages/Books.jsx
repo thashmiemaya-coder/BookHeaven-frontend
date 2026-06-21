@@ -18,7 +18,7 @@ const SORTS = [
 export default function Books() {
   useEffect(() => {
     const previousBackground = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = '#fddce1';
+    document.body.style.backgroundColor = '#ffffff';
     return () => {
       document.body.style.backgroundColor = previousBackground;
     };
