@@ -172,7 +172,7 @@ function ContactSection() {
             </div>
             <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
               <p className="text-[18px] font-semibold text-[#3F256D]">Email</p>
-              <p className="mt-4 text-[16px] text-[#5E4F78]">📧 <a href="mailto:support@bookheaven.com" className="hover:underline">support@bookheaven.com</a></p>
+              <p className="mt-4 text-[16px] text-[#5E4F78]">📧 <a href="mailto:bookheaven@gmail.com" className="hover:underline">bookheaven@gmail.com</a></p>
             </div>
             <div className="rounded-[32px] border border-[#E8D7EA] bg-white p-10 shadow-[0_26px_60px_-40px_rgba(78,42,132,0.22)]">
               <p className="text-[18px] font-semibold text-[#3F256D]">Phone</p>
