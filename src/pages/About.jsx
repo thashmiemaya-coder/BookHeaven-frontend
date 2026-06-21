@@ -1,35 +1,4 @@
-jsx
-import { useEffect } from 'react';
-import Seo from '../components/ui/Seo';
-import AboutBg from '../assets/images/aboutus.png';
-
-export default function About() {
-  useEffect(() => {
-    const previousBackground = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = '#ffffff';
-
-    return () => {
-      document.body.style.backgroundColor = previousBackground;
-    };
-  }, []);
-
-  return (
-    <div className="bg-[#ffffff]">
-      <Seo
-        title="About Us"
-        description="BookHaven is your destination for exclusive books and unforgettable stories."
-      />
-
-      {/* HERO */}
-      <section
-        className="relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[720px] md:min-h-[840px] lg:min-h-[980px]"
-        style={{ backgroundImage: `url(${aboutus.png})` }}
-      >
-        <div className="container-x relative mx-auto h-full px-4 sm:px-6 lg:px-8">
-          {/* Hero background only */}
-        </div>
-      </section>
-
+import { useEffect } from 'react'; import { BookMarked, Star, Truck, Heart, Users, ShieldCheck } from 'lucide-react'; import Seo from '../components/ui/Seo'; import AboutBg from '../assets/images/aboutus.png'; const values = [ { icon: <BookMarked />, title: 'Carefully Curated', text: 'Every title is handpicked by our team of avid readers and literary experts.' }, { icon: <Star />, title: 'Exclusive Editions', text: 'Discover special editions and rare finds you won\'t see anywhere else.' }, { icon: <Truck />, title: 'Fast Shipping', text: 'Quick, reliable delivery so your next great read arrives without the wait.' }, { icon: <Heart />, title: 'Reader First', text: 'We exist to connect people with stories that move, teach, and inspire them.' }, { icon: <Users />, title: 'A Community', text: 'Reviews, ratings, and recommendations from a community that loves books.' }, { icon: <ShieldCheck />, title: 'Secure & Trusted', text: 'Safe checkout, protected data, and support whenever you need it.' }, ]; export default function About() { useEffect(() => { const previousBackground = document.body.style.backgroundColor; document.body.style.backgroundColor = '#ffffff'; return () => { document.body.style.backgroundColor = previousBackground; }; }, []); return ( <div className="bg-[#ffffff]"> <Seo title="About Us" description="BookHaven is your destination for exclusive books and unforgettable stories." /> <section className="relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[720px] md:min-h-[840px] lg:min-h-[980px]" style={{ backgroundImage: url(${AboutBg}) }}> <div className="container-x relative mx-auto h-full px-4 sm:px-6 lg:px-8"> {/* Hero background only, no title text */} </div> </section>
       {/* INTRO */}
       <section className="container-x mx-auto max-w-[1200px] pt-20">
         <div className="text-center">
