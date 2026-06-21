@@ -15,14 +15,14 @@ const values = [
 export default function About() {
   useEffect(() => {
     const previousBackground = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = '#fcd7dd';
+    document.body.style.backgroundColor = '#ffffff';
     return () => {
       document.body.style.backgroundColor = previousBackground;
     };
   }, []);
 
   return (
-    <div className="bg-[#fcd7dd]">
+    <div className="bg-[#ffffff]">
       <Seo title="About Us" description="BookHaven is your destination for exclusive books and unforgettable stories." />
 
       <section className="relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[720px] md:min-h-[840px] lg:min-h-[980px]" style={{ backgroundImage: `url(${AboutBg})` }}>
